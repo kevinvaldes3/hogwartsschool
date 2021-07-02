@@ -1,0 +1,60 @@
+<label class="titiulo-principal"> Solicitud Nuevo Estudiante </label>
+<div class="body-container">
+    <form [formGroup]="profileForm" (ngSubmit)="crearEstudiante()">
+
+        <mat-form-field hintLabel="Maximo 10 caracteres" appearance="fill">
+            <mat-label for="name">Name</mat-label>
+            <input matInput #input maxlength="10" placeholder="Nombre" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Maximo 10 caracteres" appearance="fill">
+            <mat-label for="age">Edad</mat-label>
+            <input matInput #input maxlength="10" placeholder="Edad" formControlName="age">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label for="patronus">Patronus</mat-label>
+            <input matInput #input maxlength="100" placeholder="Patronus" formControlName="patronus">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label for="image">Imagen</mat-label>
+            <input matInput #input placeholder="ingrese Url de la imagen" formControlName="image">
+        </mat-form-field>
+
+
+        <button mat-raised-button type="submit" [disabled]="!profileForm.valid" color="accent">Guardar Solicitud Nuevo Estudiante</button>
+    </form>
+
+    <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+        <!-- columna de nombre -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        <!-- columna de edad -->
+        <ng-container matColumnDef="age">
+            <th mat-header-cell *matHeaderCellDef> Edad </th>
+            <td mat-cell *matCellDef="let element"> {{element.yearOfBirth ? 2021 - element.yearOfBirth : "Indefinido" }} </td>
+        </ng-container>
+        <!-- columna patronus -->
+        <ng-container matColumnDef="patronus">
+            <th mat-header-cell *matHeaderCellDef> Patronus </th>
+            <td mat-cell *matCellDef="let element"> {{element.patronus}} </td>
+        </ng-container>
+
+        <!-- panel de las imagen -->
+        <ng-container matColumnDef="expandedDetail">
+            <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                    <img mat-card-image class="card-imagen" src="{{element.image}}" alt="{{element.name}}">
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row" [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = expandedElement === element ? null : element">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+    </table>
+</div>

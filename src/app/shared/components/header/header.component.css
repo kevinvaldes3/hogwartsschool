@@ -1,0 +1,41 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.example-large-box {
+    height: auto;
+    width: 97%;
+}
+
+.example-large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.tittle {
+    font-family: rubik, helvetica, arial, sans-serif;
+    font-weight: 800;
+}
+
+.container-tittle {
+    padding-left: 3em;
+}
+
+.imagen-logo {
+    width: 62px;
+    height: 56px;
+    margin-right: 1em;
+}

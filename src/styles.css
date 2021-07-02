@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.body-fields .separator-field:not(:first-child) {
+    margin-top: 30px;
+}
+
+.tegett-input {
+    background-color: white;
+    border: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+    outline: 0;
+    padding: 8px !important;
+    transition: box-shadow 0.15s;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    box-shadow: 0 -2px 0 transparent inset, 0 0 0 1px #e0e0e0 inset;
+    width: 390px;
+    min-height: 32px;
+    max-height: 32px;
+}

@@ -1,0 +1,72 @@
+.body-container {
+    padding: 3rem 8rem;
+}
+
+.titiulo-principal {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: auto;
+    padding-left: 5.3em;
+}
+
+.select-casa {
+    width: 30em;
+}
+
+.mat-select-value {
+    color: #000;
+    font-weight: 800;
+}
+
+table {
+    width: 30rem;
+}
+
+tr.example-detail-row {
+    height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+}
+
+.example-element-row td {
+    border-bottom-width: 0;
+}
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+}
+
+.example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+}
+
+.card-imagen {
+    max-width: 160px !important;
+    max-height: 226px !important;
+    padding: 1rem;
+}
+
+td {
+    cursor: pointer;
+}
